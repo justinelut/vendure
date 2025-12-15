@@ -53,7 +53,7 @@ export const config: VendureConfig = {
         // logging: false,
         // database: path.join(__dirname, '../vendure.sqlite'),
         url:process.env.POSTGRES_URL,
-        synchronize: true,
+        // synchronize: true,
         
     },
 
@@ -93,9 +93,11 @@ export const config: VendureConfig = {
         }),
         DashboardPlugin.init({
             route: 'dashboard',
+        
             appDir: IS_DEV
                 ? path.join(__dirname, 'dist/dashboard')
                 : path.join(__dirname, 'dashboard'),
+                
         }),
         // DigitalProductsPlugin,
         // ProductReviewsPlugin.init({}),
