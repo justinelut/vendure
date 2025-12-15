@@ -27,6 +27,7 @@ export const config: VendureConfig = {
         trustProxy: IS_DEV ? false : 1,
         // The following options are useful in development mode,
         // but are best turned off for production for security
+        
         // reasons.
         ...(IS_DEV ? {
             adminApiDebug: true,
@@ -51,8 +52,11 @@ export const config: VendureConfig = {
         // migrations: [path.join(__dirname, './migrations/*.+(js|ts)')],
         // logging: false,
         // database: path.join(__dirname, '../vendure.sqlite'),
-        url:process.env.POSTGRES_URL
+        url:process.env.POSTGRES_URL,
+        synchronize: true,
+        
     },
+
     paymentOptions: {
         paymentMethodHandlers: [dummyPaymentHandler],
     },
